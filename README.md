@@ -1,18 +1,11 @@
-# vendor_parasite_signatures
+# vendor_nitrogen_signatures
 
 ```bash
-cd build/soong
-git remote add --fetch tpr https://github.com/TheParasiteProject/build_soong.git
-# https://github.com/TheParasiteProject/build_soong/commit/0fc0a6c620e031c46882fdd0363c1cda9d0f0b7b
-git cherry-pick 0fc0a6c620e031c46882fdd0363c1cda9d0f0b7b
+croot && git clone https://github.com/nitrogen-project/android_vendor_signatures vendor/nitrogen/signatures
 ```
 
 ```bash
-croot && git clone https://github.com/TheParasiteProject/vendor_parasite_signatures vendor/parasite/signatures
-```
-
-```bash
-cd vendor/parasite/signatures
+cd vendor/nitrogen/signatures
 ```
 
 ```bash
@@ -30,9 +23,9 @@ TARGET_BUILD_FULLY_SIGN := true
 
 ```makefile
 TARGET_BUILD_FULLY_SIGN := true
-include vendor/parasite/signatures/BoardConfigSign.mk
+include vendor/nitrogen/signatures/BoardConfigSign.mk
 
-TARGET_AVB_KEY_PATH := $(PARASITE_AVB_KEY_PATH)
+TARGET_AVB_KEY_PATH := $(NITROGEN_AVB_KEY_PATH)
 # Differs what bit (e.g. 2048) you selected for key generation
 TARGET_AVB_ALGORITHM := SHA256_RSA2048
 
@@ -55,3 +48,4 @@ BOARD_AVB_VENDOR_BOOT_ALGORITHM := $(TARGET_AVB_ALGORITHM)
 
 * [android_vendor_lineage-priv_keys](https://github.com/ItsVixano/android_vendor_lineage-priv_keys) - by [ItsVixano](https://github.com/ItsVixano)
 * [vendor_evolution-priv_keys-template](https://github.com/Evolution-XYZ/vendor_evolution-priv_keys-template) - by [Evolution-XYZ](https://github.com/Evolution-XYZ)
+* [vendor_parasite_signatures] (https://github.com/TheParasiteProject/vendor_parasite_signatures]

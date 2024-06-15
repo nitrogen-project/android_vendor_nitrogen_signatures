@@ -3,7 +3,7 @@
 AVBTOOL=.bin/avbtool
 MAKEKEY=./make_key
 
-OUTDIR=../private-signatures
+OUTDIR=../../private-signatures
 
 CERTIFICATE_FILES_TXT="certificate-files.txt"
 
@@ -75,13 +75,13 @@ function user_input() {
         fi
     else
         key_size='2048'
-        country_code='US'
-        state='California'
-        city='Mountain View'
+        country_code='RU'
+        state='Russia'
+        city='Moscow'
         org='Android'
         ou='Android'
         cn='Android'
-        email='android@android.com'
+        email='xyyx@mail.ru'
     fi
 
     subject="/C=$country_code/ST=$state/L=$city/O=$org/OU=$ou/CN=$cn/emailAddress=$email"
